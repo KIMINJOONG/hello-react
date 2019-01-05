@@ -1,68 +1,37 @@
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+#jsx란?
+자바스크립트의 확장 문법으로 XML과 매우 비슷하게 생김
+나중에 코드가 번들링되면서 babel-loader를 사용하여 자바스크립트로 변환!
 
-## Available Scripts
+#jsx의 장점
+1. 보기쉽고 익숙하다.
+2. 오류 검사 -> 바벨이 코드를 변환하는 과정에서 이를 감지
+3. 더욱 높은 활용도 
 
-In the project directory, you can run:
+#JSX문법
+1. 감싸인 요소
+2. 자바스크립트 표현
+  - 단순히 DOM요소를 렌더링하는 기능뿐만아니라고 JSX안에서 자바스크립트 표현식이 가능
+    단! JSX내부에서 코드를 {}로 감싸야 함
+3. if문 대신 조건부 연산자
+  - JSX내부의 자바스크립트 표현식에서는 if문이 사용 불가능 JSX밖에서 if문을 사용하거나, {}안에 삼항연산자를 사용
+4. &&를 사용한 조건부 렌더링
+5. 인라인 스타일링
+    - DOM요소에 스타일을 적용할 때는 문자열 형태로 적용할수 없음. 그 대신 CSS스타일을 자바스크립트 객체 형식으로 만들어 적용
+      (key는 camelCase로 작성)
+6. class대신 className
+    - class키워드는 이미 자바스크립트에 존재하는 키워드 이기때문에 className을 사용
+7. 꼭 닫아야하는 태그
+    - JSX에서 닫아주지않는다면 virtual DOM에서 트리형태의 구조를 만들지 못하기때문에 오류가 발생
+8. 주석
+    - JSX안에서 주석은 자바스크립트와 다름 {/* */} 자바스크립트 표현식을 사용할때 처럼 작성
 
-### `npm start`
+#정리
+JSX는 HTML과 비슷하지만 완전히 똑같지는 않다.
+코드로 보면 XML형식이지만 실제로는 자바스크립트 객체며, 용도도 다르고 문법도 차이가 남.
 
-Runs the app in the development mode.<br>
-Open [http://localhost:3000](http://localhost:3000) to view it in the browser.
 
-The page will reload if you make edits.<br>
-You will also see any lint errors in the console.
+#ReactDOM.redner는 무엇을하는 코드일까?
+-컴포넌트를 페이지에 렌더링 하는역할 react-dom 모듈을 불러와 사용가능
+첫번째 파라미터에는 페이지에 렌더링할 내용을 JSX형태로 작성, 두번째 파라미터는 해당 JSX를 렌더링 할 document내부 요소를 설정
+id가 root인 요소안에 렌더링 하도록 설정
 
-### `npm test`
-
-Launches the test runner in the interactive watch mode.<br>
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
-
-### `npm run build`
-
-Builds the app for production to the `build` folder.<br>
-It correctly bundles React in production mode and optimizes the build for the best performance.
-
-The build is minified and the filenames include the hashes.<br>
-Your app is ready to be deployed!
-
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
-
-### `npm run eject`
-
-**Note: this is a one-way operation. Once you `eject`, you can’t go back!**
-
-If you aren’t satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
-
-Instead, it will copy all the configuration files and the transitive dependencies (Webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you’re on your own.
-
-You don’t have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn’t feel obligated to use this feature. However we understand that this tool wouldn’t be useful if you couldn’t customize it when you are ready for it.
-
-## Learn More
-
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
-
-To learn React, check out the [React documentation](https://reactjs.org/).
-
-### Code Splitting
-
-This section has moved here: https://facebook.github.io/create-react-app/docs/code-splitting
-
-### Analyzing the Bundle Size
-
-This section has moved here: https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size
-
-### Making a Progressive Web App
-
-This section has moved here: https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app
-
-### Advanced Configuration
-
-This section has moved here: https://facebook.github.io/create-react-app/docs/advanced-configuration
-
-### Deployment
-
-This section has moved here: https://facebook.github.io/create-react-app/docs/deployment
-
-### `npm run build` fails to minify
-
-This section has moved here: https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify
