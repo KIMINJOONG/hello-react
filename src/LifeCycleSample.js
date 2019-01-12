@@ -9,7 +9,7 @@ class LifeCycleSample extends Component {
     myRef = null;
 
     constructor(props) {
-        super(porps);
+        super(props);
         console.log('constructor');
     }
 

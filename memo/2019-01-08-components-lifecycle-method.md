@@ -103,3 +103,16 @@
     <li>컴포넌트를 DOM에서 제거할 때 실행</li>
     <li>componentDidMount에서 등록한 이벤트, 타이머, 직접생선한 DOM이 있다면 여기에서 제거 작업을 해야함</li>
 </ul>
+
+<h2>정리</h2>
+<ul>
+    <li>마운트 -> constructor -> getDerivedStateFromProps -> render -> componentDidMount</li>
+    <li>업데이트 (props변경, 부모리렌더링) -> getDerivedStateFromProps -> render</li>
+    <li>업데이트 (setState) -> shouldComponentUpdate (값이 true),(flase일때는 여기서 멈춤) -> render -> getSnapshotBeforeUpdate -> componentDidUpdate</li>
+    <li>언마운트 -> componentWillUnmount</li>
+</ul>
+<ul>
+    <li>라이프사이클 메서드는 컴포넌트상태에 변화가 있을 때마다 실행하는 메서드</li>
+    <li>서드파티 라이브러리를 사용하거나 DOM을 직접 건드려야하는 상황에서 유용</li>
+    <li>컴포넌트 업데이트의 성능을 개선할 때는 shouldComponentUpdate가 중요하게 사용</li>
+</ul>
